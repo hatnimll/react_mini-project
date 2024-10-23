@@ -1,0 +1,8 @@
+#root {
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
