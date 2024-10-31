@@ -36,16 +36,16 @@ function TodoItem({ todo }) {
   };
 
   return (
-    <li className="mt-1 flex mx-6 flex-1">
+    <li className=" flex flex-1 text-4xl gap-4 mb-7">
       <input
-        className="mr-3"
+        className="w-8"
         type="checkbox"
         checked={todo.isChecked === true}
         onChange={() => handleToggleCheckbox(todo.id)}
       />
       {isClickedEditButton ? (
         <input
-          className=" pl-2 outline-none grow"
+          className=" pl-2 outline-none w-grow"
           autoFocus
           value={editInputValue}
           onChange={(e) => setEditInputValue(e.target.value)}

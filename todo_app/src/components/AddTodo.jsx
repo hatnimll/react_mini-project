@@ -23,7 +23,7 @@ function AddTodo() {
   };
 
   return (
-    <section className="w-full h-1/5 flex justify-center items-center">
+    <section className="w-full h-1/5 flex justify-center items-center text-4xl">
       <input
         className="w-9/12 h-1/2 bg-white outline-none border border-solid border-gray-400 border-r-transparent pl-3 placeholder:focus:text-transparent"
         type="text"
@@ -32,7 +32,7 @@ function AddTodo() {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button
-        className="w-7 h-1/2 flex justify-center items-center bg-white border boder-solid border-gray-400"
+        className="w-20 h-1/2 flex justify-center items-center bg-white border boder-solid border-gray-400"
         onClick={handleAddTodo}
       >
         <IoMdAdd />
