@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import { IoMdAdd } from 'react-icons/io';
 import { useTodos } from '../context/todosContext';
 
@@ -15,7 +15,7 @@ function AddTodo() {
       ...prevTodoList,
       {
         id: Number(new Date()),
-        content: inputValue,
+        content: inputValue.trim(),
         isChecked: false,
       },
     ]);
@@ -35,7 +35,7 @@ function AddTodo() {
         className="w-20 h-1/2 flex justify-center items-center bg-white border boder-solid border-gray-400"
         onClick={handleAddTodo}
       >
-        <IoMdAdd />
+        <IoMdAdd /> {/*추가*/}
       </button>
     </section>
   );

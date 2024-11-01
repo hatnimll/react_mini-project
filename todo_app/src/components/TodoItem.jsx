@@ -20,15 +20,14 @@ function TodoItem({ todo }) {
   const handleEditTodo = (id) => {
     setTodos(
       todos.map((todo) =>
-        todo.id === id ? { ...todo, content: editInputValue } : todo
+        todo.id === id ? { ...todo, content: editInputValue.trim() } : todo
       )
     );
     setIsClickedEditButton(false);
-    setEditInputValue(editInputValue);
   };
 
-  const toggleEditButton = () => {
-    setIsClickedEditButton((isClickedEditButton) => !isClickedEditButton);
+  const toggleEditButtonClick = () => {
+    setIsClickedEditButton(true);
   };
 
   const handleDelete = (id) => {
@@ -45,9 +44,9 @@ function TodoItem({ todo }) {
       />
       {isClickedEditButton ? (
         <input
-          className=" pl-2 outline-none w-grow"
+          className=" pl-2 outline-none grow"
           autoFocus
-          value={editInputValue}
+          value={editInputValue.trim()}
           onChange={(e) => setEditInputValue(e.target.value)}
         />
       ) : (
@@ -64,7 +63,7 @@ function TodoItem({ todo }) {
           <FaCheck /> {/*완료*/}
         </button>
       ) : (
-        <button className="mx-2" onClick={toggleEditButton}>
+        <button className="mx-2" onClick={toggleEditButtonClick}>
           <MdOutlineEdit /> {/*수정*/}
         </button>
       )}
